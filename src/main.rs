@@ -92,7 +92,10 @@ async fn main() {
     initialize_logger();
     let socket_addr = SocketAddr::from((ip_addr, ARGUMENTS.port));
     let handle = tokio::spawn(warp::serve(routes()).bind(socket_addr));
-    info!("Server listening on http://{}", socket_addr);
+    let ip_string = "http://".to_string() + &socket_addr.to_string();
+    info!("Server listening on {}", ip_string);
+    info!("Access the directory by visiting the above URL in a web browser or by scanning the QR code below");
+    let _ = qr2term::print_qr(ip_string);
 
     ctrl_c().await.expect("Unalbe to get Ctrl+C signal");
     info!("Ctrl+C received. Shutting down");
