@@ -1,11 +1,12 @@
 [![pipeline status](https://gitlab.com/skubalj/serve-directory/badges/main/pipeline.svg)](https://gitlab.com/skubalj/serve-directory/-/commits/main)
 
-`serve-directory`
+`serve-directory-qr`
 ===============
 
-`serve-directory` is a simple command line utility to serve static files from the command line. In
+`serve-directory-qr` is a simple command line utility to serve static files from the command line. In
 the general case, we really mean *simple*. To start a web server serving the contents of the current
 directory and its subdirectories, just run the executable without arguments.
+It has been forked from https://gitlab.com/skubalj/serve-directory with the purpose of adding a scannable QR code to the info message in the terminal.
 
 ```bash
 $ serve-directory
@@ -76,6 +77,9 @@ $ serve-directory -p 80 ~/www
 ```
 
 ## Acknowledgment
+Thanks to [skubalj](https://gitlab.com/skubalj/) for creating the base of this project!
+This is simply a small addition the the project.
+
 A special thank you to the [serve](https://www.npmjs.com/package/serve) project for providing
 inspiration for this tool! Thank you as well to Material-UI for the icons used on the directory 
 webpage!
@@ -90,6 +94,7 @@ This project is made possible by the work of the following great libraries:
 | [log](https://crates.io/crates/log)                           | The Rust Project Developers |
 | [structopt](https://crates.io/crates/structopt)               | Guillaume Pinot             |
 | [tokio](https://crates.io/crates/tokio)                       | Tokio Contributors          |
+| [qr2term](https://crates.io/crates/qr2term/0.3.1)             | Tim Visée                   |
 | [warp](https://crates.io/crates/warp)                         | Sean McArthur               |
 
 And, of course, the [Rust language](https://rust-lang.org)!
